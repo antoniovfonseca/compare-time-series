@@ -7499,6 +7499,7 @@ a.anchor-link {
 <span class="c1"># =============================================================================</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">rasterio</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
@@ -7530,15 +7531,15 @@ a.anchor-link {
 <span class="c1"># =============================================================================</span>
 
 <span class="c1"># Input raster maps:</span>
-<span class="n">path_series_x</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"C:\Users\AntFonseca\github\compare-time-series\input\collection6"</span>
-<span class="n">path_series_y</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"C:\Users\AntFonseca\github\compare-time-series\input\collection8"</span>
-<span class="n">time_points</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2005</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2020</span><span class="p">]</span>
-<span class="n">class_name</span> <span class="o">=</span> <span class="s2">"savanna"</span>
+<span class="c1"># path_series_x = r"C:\Users\AntFonseca\github\compare-time-series\input\collection6"</span>
+<span class="c1"># path_series_y = r"C:\Users\AntFonseca\github\compare-time-series\input\collection8"</span>
+<span class="c1"># time_points = [1990, 1995, 2000, 2005, 2010, 2015, 2020]</span>
+<span class="c1"># class_name = "forest"</span>
 
-<span class="c1"># path_series_x = r"C:\Users\AntFonseca\github\compare-time-series\input\toydata\x"</span>
-<span class="c1"># path_series_y = r"C:\Users\AntFonseca\github\compare-time-series\input\toydata\y"</span>
-<span class="c1"># time_points = [0, 1, 2]</span>
-<span class="c1"># class_name = "toydata"</span>
+<span class="n">path_series_x</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"C:\Users\AntFonseca\github\compare-time-series\input\toydata\x"</span>
+<span class="n">path_series_y</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"C:\Users\AntFonseca\github\compare-time-series\input\toydata\y"</span>
+<span class="n">time_points</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">class_name</span> <span class="o">=</span> <span class="s2">"toydata"</span>
 
 <span class="c1"># Output folder</span>
 <span class="n">output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"C:\Users\AntFonseca\github\compare-time-series\output_beta3"</span>
@@ -7573,6 +7574,17 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="2.1-Presence">2.1 Presence<a class="anchor-link" href="#2.1-Presence">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d2f6c49">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Calculate-metrics">Calculate metrics<a class="anchor-link" href="#Calculate-metrics">¶</a></h4>
 </div>
 </div>
 </div>
@@ -7659,6 +7671,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5a939f4a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Plot-the-graphic">Plot the graphic<a class="anchor-link" href="#Plot-the-graphic">¶</a></h4>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=50e15062">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7674,9 +7697,9 @@ a.anchor-link {
 
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.family'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'serif'</span>
 
-<span class="k">def</span> <span class="nf">millions_formatter</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Formats the y-axis tick, dividing by 1 million."""</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1_000_000</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">'</span>
+<span class="c1"># def millions_formatter(y, pos):</span>
+<span class="c1">#     """Formats the y-axis tick, dividing by 1 million."""</span>
+<span class="c1">#     return f'{y / 1_000_000:.0f}'</span>
 
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">tp</span><span class="p">)</span> <span class="k">for</span> <span class="n">tp</span> <span class="ow">in</span> <span class="n">time_points</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">"Sum"</span><span class="p">]</span>
 <span class="n">hits</span> <span class="o">=</span> <span class="p">[</span><span class="n">results_by_time</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tp</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"Hit"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">tp</span> <span class="ow">in</span> <span class="n">time_points</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">sum_results</span><span class="p">[</span><span class="s2">"Hit"</span><span class="p">]]</span>
@@ -7732,7 +7755,8 @@ a.anchor-link {
         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
         <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="n">millions_formatter</span><span class="p">))</span>
+<span class="c1"># ax.set_ylim(-4_000_000, 2_000_000)</span>
+<span class="c1"># ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))</span>
 
 <span class="n">handles</span><span class="p">,</span> <span class="n">labels_list</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
 <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Collection 6"</span><span class="p">,</span>
@@ -7756,7 +7780,9 @@ a.anchor-link {
              <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time Point'</span><span class="p">,</span>
               <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Presence (Million pixels)'</span><span class="p">,</span>
+<span class="c1"># ax.set_ylabel('Presence (Million pixels)',</span>
+<span class="c1">#               fontsize=12)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Presence'</span><span class="p">,</span>
               <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
@@ -7783,6 +7809,17 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="2.2-Gross-Change">2.2 Gross Change<a class="anchor-link" href="#2.2-Gross-Change">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ead4dbd9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Calculate-metrics">Calculate metrics<a class="anchor-link" href="#Calculate-metrics">¶</a></h4>
 </div>
 </div>
 </div>
@@ -8068,6 +8105,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0a93ae67">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Plot-the-graphic">Plot the graphic<a class="anchor-link" href="#Plot-the-graphic">¶</a></h4>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8fb47da8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8077,15 +8125,30 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
-<span class="c1"># 5. Making the graphic</span>
+<span class="c1"># 5. making the graphic</span>
 <span class="c1"># =============================================================================</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Generating the Gains and Losses graphic..."</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">millions_formatter</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Formats the y-axis tick by dividing by 1 million."""</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1_000_000</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">'</span>
+<span class="c1"># --- prepare data for plotting ---</span>
+<span class="n">plot_data_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">:</span>
+    <span class="n">row_data</span> <span class="o">=</span> <span class="n">change_results_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">row_data</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="n">interval</span>
+    <span class="n">plot_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_data</span><span class="p">)</span>
 
-<span class="n">labels</span> <span class="o">=</span> <span class="n">time_intervals</span> <span class="o">+</span> <span class="p">[</span><span class="s2">"Sum"</span><span class="p">,</span> <span class="s2">"Extent"</span><span class="p">]</span>
+<span class="n">sum_row_gross</span> <span class="o">=</span> <span class="n">sum_change_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">sum_row_gross</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Sum'</span>
+<span class="n">plot_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_row_gross</span><span class="p">)</span>
+
+<span class="n">extent_row_gross</span> <span class="o">=</span> <span class="n">extent_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">extent_row_gross</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Extent'</span>
+<span class="n">plot_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extent_row_gross</span><span class="p">)</span>
+
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">plot_data_list</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Interval'</span><span class="p">)</span>
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># --- setup for the plot ---</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
 <span class="n">gain_colors</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'Hit'</span><span class="p">:</span> <span class="s1">'#0070C0'</span><span class="p">,</span>
@@ -8104,10 +8167,12 @@ a.anchor-link {
 <span class="n">gain_hatch_color</span> <span class="o">=</span> <span class="s1">'#0070C0'</span>
 <span class="n">loss_hatch_color</span> <span class="o">=</span> <span class="s1">'#FF0000'</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.family'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'serif'</span>
 
-<span class="c1"># --- Plotting Gains ---</span>
+<span class="c1"># --- plotting gains ---</span>
 <span class="n">bottom_gain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span>
     <span class="s2">"Hit"</span><span class="p">,</span>
@@ -8116,16 +8181,18 @@ a.anchor-link {
     <span class="s2">"Miss"</span><span class="p">,</span>
     <span class="s2">"False Alarm"</span>
 <span class="p">]:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">change_results_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">]</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_change_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extent_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s2">"Time Difference"</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
+    <span class="c1"># Get original data with zeros for stacking calculations</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df_plot</span><span class="p">[</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    
     <span class="k">if</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Miss"</span><span class="p">,</span> <span class="s2">"False Alarm"</span><span class="p">]:</span>
+        <span class="c1"># Create a copy for plotting, replacing 0 with NaN</span>
+        <span class="n">plot_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">plot_data</span><span class="p">[</span><span class="n">plot_data</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        
         <span class="n">hatch</span> <span class="o">=</span> <span class="s1">'///'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'False Alarm'</span> <span class="k">else</span> <span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
             <span class="n">labels</span><span class="p">,</span>
-            <span class="n">data</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
             <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
             <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span>
@@ -8133,7 +8200,7 @@ a.anchor-link {
         <span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
             <span class="n">labels</span><span class="p">,</span>
-            <span class="n">data</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span>
             <span class="n">color</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span>
             <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span>
             <span class="n">edgecolor</span><span class="o">=</span><span class="n">gain_hatch_color</span><span class="p">,</span>
@@ -8148,9 +8215,10 @@ a.anchor-link {
             <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span>
             <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'none'</span>
         <span class="p">)</span>
-    <span class="n">bottom_gain</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># Always update the bottom with the original data (containing zeros)</span>
+    <span class="n">bottom_gain</span> <span class="o">+=</span> <span class="n">data</span>
 
-<span class="c1"># --- Plotting Losses ---</span>
+<span class="c1"># --- plotting losses ---</span>
 <span class="n">bottom_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span>
     <span class="s2">"Hit"</span><span class="p">,</span>
@@ -8159,16 +8227,18 @@ a.anchor-link {
     <span class="s2">"Miss"</span><span class="p">,</span>
     <span class="s2">"False Alarm"</span>
 <span class="p">]:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">change_results_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">]</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_change_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extent_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s2">"Time Difference"</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># Get original data with zeros for stacking calculations</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df_plot</span><span class="p">[</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
     <span class="k">if</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Miss"</span><span class="p">,</span> <span class="s2">"False Alarm"</span><span class="p">]:</span>
+        <span class="c1"># Create a copy for plotting, replacing 0 with NaN</span>
+        <span class="n">plot_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">plot_data</span><span class="p">[</span><span class="n">plot_data</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        
         <span class="n">hatch</span> <span class="o">=</span> <span class="s1">'///'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'False Alarm'</span> <span class="k">else</span> <span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
             <span class="n">labels</span><span class="p">,</span>
-            <span class="n">data</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
             <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
             <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span>
@@ -8176,7 +8246,7 @@ a.anchor-link {
         <span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
             <span class="n">labels</span><span class="p">,</span>
-            <span class="n">data</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span>
             <span class="n">color</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span>
             <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span>
             <span class="n">edgecolor</span><span class="o">=</span><span class="n">loss_hatch_color</span><span class="p">,</span>
@@ -8191,12 +8261,10 @@ a.anchor-link {
             <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span>
             <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'none'</span>
         <span class="p">)</span>
-    <span class="n">bottom_loss</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># Always update the bottom with the original data (containing zeros)</span>
+    <span class="n">bottom_loss</span> <span class="o">+=</span> <span class="n">data</span>
 
-<span class="c1"># --- Final Graphic Settings ---</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">25_000_000</span><span class="p">,</span> <span class="mi">10_000_000</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="n">millions_formatter</span><span class="p">))</span>
-
+<span class="c1"># --- final graphic settings ---</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span>
     <span class="mi">0</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
@@ -8210,16 +8278,35 @@ a.anchor-link {
     <span class="s1">'Time Interval'</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># --- y-axis scale settings (choose one option) ---</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># --- Option 1: For 'toy_data' or data with small values ---</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span>
-    <span class="s1">'Gross Loss and Gross Gain (Million pixels)'</span><span class="p">,</span>
+    <span class="s1">'Gross Loss and Gross Gain'</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
 
-<span class="c1"># --- Logic to Order the Legend (with corrected handles) ---</span>
+<span class="c1"># # --- Option 2: For real data with large values (e.g., MapBiomas) ---</span>
+<span class="c1"># def millions_formatter(y, pos):</span>
+<span class="c1">#     """Formats the y-axis tick by dividing by 1 million."""</span>
+<span class="c1">#     return f'{y / 1_000_000:.1f}'</span>
+<span class="c1"># ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))</span>
+<span class="c1"># # ax.set_ylim(-40000000, 10000000) # Optional: uncomment to set manual limits</span>
+<span class="c1"># ax.set_ylabel(</span>
+<span class="c1">#     'Gross Loss and Gross Gain (Million pixels)',</span>
+<span class="c1">#     fontsize=12</span>
+<span class="c1"># )</span>
+
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># --- logic to order the legend ---</span>
 <span class="n">handles</span><span class="p">,</span> <span class="n">labels_list</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
 <span class="n">legend_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">labels_list</span><span class="p">,</span> <span class="n">handles</span><span class="p">))</span>
 
-<span class="c1"># --- Creation of Custom Handles for the Legend ---</span>
 <span class="n">legend_dict</span><span class="p">[</span><span class="s1">'Gain Miss'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">),</span>
     <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">gain_hatch_color</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span><span class="p">)</span>
@@ -8242,19 +8329,28 @@ a.anchor-link {
     <span class="s1">'Gain Space Difference'</span><span class="p">,</span> <span class="s1">'Gain Hit'</span><span class="p">,</span> <span class="s1">'Loss Miss'</span><span class="p">,</span> <span class="s1">'Loss False Alarm'</span><span class="p">,</span>
     <span class="s1">'Loss Time Difference'</span><span class="p">,</span> <span class="s1">'Loss Space Difference'</span><span class="p">,</span> <span class="s1">'Loss Hit'</span>
 <span class="p">]</span>
-<span class="n">ordered_handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">legend_dict</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">order</span><span class="p">]</span>
-<span class="n">ordered_labels</span> <span class="o">=</span> <span class="n">order</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+<span class="n">ordered_handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">order</span> <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">legend_dict</span><span class="p">]</span>
+<span class="n">ordered_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">label</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">order</span> <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">legend_dict</span><span class="p">]</span>
+
+<span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
     <span class="n">handles</span><span class="o">=</span><span class="n">ordered_handles</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="n">ordered_labels</span><span class="p">,</span>
     <span class="n">loc</span><span class="o">=</span><span class="s1">'center left'</span><span class="p">,</span>
     <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-    <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">alignment</span><span class="o">=</span><span class="s1">'left'</span>
 <span class="p">)</span>
+<span class="n">legend</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span><span class="o">.</span><span class="n">set_ha</span><span class="p">(</span><span class="s1">'left'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">legend</span><span class="o">.</span><span class="n">get_texts</span><span class="p">():</span>
+    <span class="n">text</span><span class="o">.</span><span class="n">set_ha</span><span class="p">(</span><span class="s1">'left'</span><span class="p">)</span>
 
+<span class="c1"># --- save the graphic ---</span>
 <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'gross_change_</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">_graphic.png'</span>
-<span class="n">final_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">)</span>
+<span class="n">final_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">output_path</span><span class="p">,</span>
+    <span class="n">output_filename</span>
+<span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
     <span class="n">final_path</span><span class="p">,</span>
@@ -8278,6 +8374,17 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="2.3-Net-Change">2.3 Net Change<a class="anchor-link" href="#2.3-Net-Change">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=76d444f4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Calculate-metrics">Calculate metrics<a class="anchor-link" href="#Calculate-metrics">¶</a></h4>
 </div>
 </div>
 </div>
@@ -8450,6 +8557,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a99c8e09">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Plot-the-graphic">Plot the graphic<a class="anchor-link" href="#Plot-the-graphic">¶</a></h4>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=218771a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8459,16 +8577,31 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
-<span class="c1"># 4. Making the net change graphic</span>
+<span class="c1"># 5. making the net change graphic</span>
 <span class="c1"># =============================================================================</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Generating the Net Change graphic..."</span><span class="p">)</span>
 
-<span class="c1"># --- function to format the y-axis in millions ---</span>
-<span class="k">def</span> <span class="nf">millions_formatter</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Formats the y-axis tick by dividing by 1 million."""</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1_000_000</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">'</span>
+<span class="c1"># --- prepare data for plotting ---</span>
+<span class="n">net_plot_data_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">:</span>
+    <span class="n">row_data</span> <span class="o">=</span> <span class="n">net_change_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">row_data</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="n">interval</span>
+    <span class="n">net_plot_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_data</span><span class="p">)</span>
 
-<span class="n">labels</span> <span class="o">=</span> <span class="n">time_intervals</span> <span class="o">+</span> <span class="p">[</span><span class="s2">"Sum"</span><span class="p">,</span> <span class="s2">"Extent"</span><span class="p">]</span>
+<span class="n">sum_row_net</span> <span class="o">=</span> <span class="n">sum_net_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">sum_row_net</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Sum'</span>
+<span class="n">net_plot_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_row_net</span><span class="p">)</span>
+
+<span class="n">extent_row_net</span> <span class="o">=</span> <span class="n">net_extent_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">extent_row_net</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Extent'</span>
+<span class="n">net_plot_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extent_row_net</span><span class="p">)</span>
+
+<span class="n">df_plot_net</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">net_plot_data_list</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Interval'</span><span class="p">)</span>
+<span class="n">df_plot_net</span> <span class="o">=</span> <span class="n">df_plot_net</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1"># --- setup for the plot ---</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">df_plot_net</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">gain_colors</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'Hit'</span><span class="p">:</span> <span class="s1">'#0070C0'</span><span class="p">,</span>
     <span class="s1">'Time Difference'</span><span class="p">:</span> <span class="s1">'#BDD7EE'</span><span class="p">,</span>
@@ -8483,78 +8616,146 @@ a.anchor-link {
 <span class="p">}</span>
 <span class="n">gain_hatch_color</span><span class="p">,</span> <span class="n">loss_hatch_color</span> <span class="o">=</span> <span class="s1">'#0070C0'</span><span class="p">,</span> <span class="s1">'#FF0000'</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.family'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'serif'</span>
 
-<span class="c1"># --- Plotting Net Gains ---</span>
+<span class="c1"># --- plotting net gains ---</span>
 <span class="n">bottom_gain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Hit"</span><span class="p">,</span> <span class="s2">"Time Difference"</span><span class="p">,</span> <span class="s2">"Miss"</span><span class="p">,</span> <span class="s2">"False Alarm"</span><span class="p">]:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">net_change_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">]</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_net_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">net_extent_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">!=</span> <span class="s2">"Time Difference"</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="s2">"Hit"</span><span class="p">,</span>
+    <span class="s2">"Time Difference"</span><span class="p">,</span>
+    <span class="s2">"Miss"</span><span class="p">,</span>
+    <span class="s2">"False Alarm"</span>
+<span class="p">]:</span>
+    <span class="c1"># Get the original data with zeros for stacking calculations</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df_plot_net</span><span class="p">[</span><span class="sa">f</span><span class="s2">"Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
     
-    <span class="n">hatch</span> <span class="o">=</span> <span class="s1">'///'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'False Alarm'</span> <span class="k">else</span> <span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'Miss'</span> <span class="k">else</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="n">hatch</span><span class="p">:</span>
+    <span class="c1"># Create a copy for plotting, replacing 0 with NaN</span>
+    <span class="n">plot_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">plot_data</span><span class="p">[</span><span class="n">plot_data</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    
+    <span class="k">if</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Miss"</span><span class="p">,</span> <span class="s2">"False Alarm"</span><span class="p">]:</span>
+        <span class="n">hatch</span> <span class="o">=</span> <span class="s1">'///'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'False Alarm'</span> <span class="k">else</span> <span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-            <span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
-            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span>
+            <span class="n">labels</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span> <span class="c1"># Use data with NaNs for plotting</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
+            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span>
         <span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-            <span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span>
-            <span class="n">edgecolor</span><span class="o">=</span><span class="n">gain_hatch_color</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="n">hatch</span>
+            <span class="n">labels</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span> <span class="c1"># Use data with NaNs for plotting</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span>
+            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="n">gain_hatch_color</span><span class="p">,</span>
+            <span class="n">hatch</span><span class="o">=</span><span class="n">hatch</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Use original data for solid bars as they have no problematic edge</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-            <span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">gain_colors</span><span class="p">[</span><span class="n">comp</span><span class="p">],</span>
-            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'none'</span>
+            <span class="n">labels</span><span class="p">,</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Gain </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">gain_colors</span><span class="p">[</span><span class="n">comp</span><span class="p">],</span>
+            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_gain</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'none'</span>
         <span class="p">)</span>
-    <span class="n">bottom_gain</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># Always update the bottom with the original data (containing zeros)</span>
+    <span class="n">bottom_gain</span> <span class="o">+=</span> <span class="n">data</span>
 
-<span class="c1"># --- Plotting Net Losses ---</span>
+<span class="c1"># --- plotting net losses ---</span>
 <span class="n">bottom_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Hit"</span><span class="p">,</span> <span class="s2">"Time Difference"</span><span class="p">,</span> <span class="s2">"Miss"</span><span class="p">,</span> <span class="s2">"False Alarm"</span><span class="p">]:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">net_change_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">]</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_net_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">net_extent_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">!=</span> <span class="s2">"Time Difference"</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
-    
-    <span class="n">hatch</span> <span class="o">=</span> <span class="s1">'///'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'False Alarm'</span> <span class="k">else</span> <span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'Miss'</span> <span class="k">else</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="n">hatch</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="s2">"Hit"</span><span class="p">,</span>
+    <span class="s2">"Time Difference"</span><span class="p">,</span>
+    <span class="s2">"Miss"</span><span class="p">,</span>
+    <span class="s2">"False Alarm"</span>
+<span class="p">]:</span>
+    <span class="c1"># Get the original data with zeros for stacking calculations</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df_plot_net</span><span class="p">[</span><span class="sa">f</span><span class="s2">"Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># Create a copy for plotting, replacing 0 with NaN</span>
+    <span class="n">plot_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">plot_data</span><span class="p">[</span><span class="n">plot_data</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        
+    <span class="k">if</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Miss"</span><span class="p">,</span> <span class="s2">"False Alarm"</span><span class="p">]:</span>
+        <span class="n">hatch</span> <span class="o">=</span> <span class="s1">'///'</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="s1">'False Alarm'</span> <span class="k">else</span> <span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-            <span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
-            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span>
+            <span class="n">labels</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span> <span class="c1"># Use data with NaNs for plotting</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
+            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span>
         <span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-            <span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span>
-            <span class="n">edgecolor</span><span class="o">=</span><span class="n">loss_hatch_color</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="n">hatch</span>
+            <span class="n">labels</span><span class="p">,</span>
+            <span class="n">plot_data</span><span class="p">,</span> <span class="c1"># Use data with NaNs for plotting</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span>
+            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="n">loss_hatch_color</span><span class="p">,</span>
+            <span class="n">hatch</span><span class="o">=</span><span class="n">hatch</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Use original data for solid bars</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-            <span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">loss_colors</span><span class="p">[</span><span class="n">comp</span><span class="p">],</span>
-            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'none'</span>
+            <span class="n">labels</span><span class="p">,</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Loss </span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">loss_colors</span><span class="p">[</span><span class="n">comp</span><span class="p">],</span>
+            <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_loss</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'none'</span>
         <span class="p">)</span>
-    <span class="n">bottom_loss</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    
-<span class="c1"># --- apply formatter and limits to y-axis ---</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="n">millions_formatter</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">25_000_000</span><span class="p">,</span> <span class="mi">10_000_000</span><span class="p">)</span>
+    <span class="c1"># Always update the bottom with the original data (containing zeros)</span>
+    <span class="n">bottom_loss</span> <span class="o">+=</span> <span class="n">data</span>
 
 <span class="c1"># --- final graphic settings ---</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span>
+    <span class="mi">0</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span>
+<span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
-    <span class="s1">'Quantity Loss and Gain During Time Intervals'</span><span class="p">,</span>
+    <span class="s1">'Net Loss and Gain During Time Intervals'</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span>
     <span class="s1">'Time Interval'</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># --- Y-AXIS SCALE SETTINGS (CHOOSE ONE OPTION) ---</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># --- Option 1: For 'toy_data' or data with small values ---</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span>
-    <span class="s1">'Net Loss and Net Gain (Million pixels)'</span><span class="p">,</span>
+    <span class="s1">'Net Loss and Net Gain'</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
 
+<span class="c1"># # --- Option 2: For real data with large values (e.g., MapBiomas) ---</span>
+<span class="c1"># def millions_formatter(y, pos):</span>
+<span class="c1">#     """Formats the y-axis tick by dividing by 1 million."""</span>
+<span class="c1">#     return f'{y / 1_000_000:.1f}'</span>
+<span class="c1"># ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))</span>
+<span class="c1"># # ax.set_ylim(-25000000, 10000000) # Optional: uncomment to set manual limits</span>
+<span class="c1"># ax.set_ylabel(</span>
+<span class="c1">#     'Net Loss and Net Gain (Million pixels)',</span>
+<span class="c1">#     fontsize=12</span>
+<span class="c1"># )</span>
+
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># --- logic to order the legend ---</span>
 <span class="n">handles</span><span class="p">,</span> <span class="n">labels_list</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
 <span class="n">legend_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">labels_list</span><span class="p">,</span> <span class="n">handles</span><span class="p">))</span>
+
 <span class="n">legend_dict</span><span class="p">[</span><span class="s1">'Gain Miss'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">),</span>
     <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">gain_hatch_color</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">'</span><span class="se">\\\\\\</span><span class="s1">'</span><span class="p">)</span>
@@ -8576,19 +8777,28 @@ a.anchor-link {
     <span class="s1">'Gain Miss'</span><span class="p">,</span> <span class="s1">'Gain False Alarm'</span><span class="p">,</span> <span class="s1">'Gain Time Difference'</span><span class="p">,</span> <span class="s1">'Gain Hit'</span><span class="p">,</span>
     <span class="s1">'Loss Miss'</span><span class="p">,</span> <span class="s1">'Loss False Alarm'</span><span class="p">,</span> <span class="s1">'Loss Time Difference'</span><span class="p">,</span> <span class="s1">'Loss Hit'</span>
 <span class="p">]</span>
-<span class="n">ordered_handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">order</span><span class="p">]</span>
-<span class="n">ordered_labels</span> <span class="o">=</span> <span class="n">order</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+<span class="n">ordered_handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">order</span> <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">legend_dict</span><span class="p">]</span>
+<span class="n">ordered_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">label</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">order</span> <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">legend_dict</span><span class="p">]</span>
+
+<span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
     <span class="n">handles</span><span class="o">=</span><span class="n">ordered_handles</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="n">ordered_labels</span><span class="p">,</span>
     <span class="n">loc</span><span class="o">=</span><span class="s1">'center left'</span><span class="p">,</span>
     <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-    <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">alignment</span><span class="o">=</span><span class="s1">'left'</span>
 <span class="p">)</span>
+<span class="n">legend</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span><span class="o">.</span><span class="n">set_ha</span><span class="p">(</span><span class="s1">'left'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">legend</span><span class="o">.</span><span class="n">get_texts</span><span class="p">():</span>
+    <span class="n">text</span><span class="o">.</span><span class="n">set_ha</span><span class="p">(</span><span class="s1">'left'</span><span class="p">)</span>
 
+<span class="c1"># --- save the graphic ---</span>
 <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'net_change_</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">_graphic.png'</span>
-<span class="n">final_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">)</span>
+<span class="n">final_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">output_path</span><span class="p">,</span>
+    <span class="n">output_filename</span>
+<span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
     <span class="n">final_path</span><span class="p">,</span>
@@ -8598,7 +8808,136 @@ a.anchor-link {
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Processing complete. Net Change graphic saved as: </span><span class="si">{</span><span class="n">final_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">✅ Processing complete. Graphic saved as: </span><span class="si">{</span><span class="n">final_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3119bee">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.-Export-results">3. Export results<a class="anchor-link" href="#3.-Export-results">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=39ba7910">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
+<span class="c1"># 1. Export all graphic results to an Excel file</span>
+<span class="c1"># =============================================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Starting the export of results to Excel..."</span><span class="p">)</span>
+
+<span class="c1"># Import pandas if it's not already in memory</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Define the output Excel filename and path</span>
+<span class="n">excel_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'analysis_results_</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">.xlsx'</span>
+<span class="n">excel_final_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">excel_filename</span><span class="p">)</span>
+
+<span class="c1"># Use pandas ExcelWriter to save multiple dataframes to one .xlsx file</span>
+<span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="n">excel_final_path</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'xlsxwriter'</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+    
+    <span class="c1"># --- 1. README SHEET ---</span>
+    <span class="n">readme_text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"This excel file summarizes all the results from the Python Notebook.</span><span class="se">\n\n</span><span class="s2">"</span>
+        <span class="s2">"Sheet Descriptions:</span><span class="se">\n\n</span><span class="s2">"</span>
+        <span class="s2">"- Presence Agreement:</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="s2">"  Contains the aggregated values for the Presence Agreement chart, showing Hits, Misses, etc., for each time point and the final sum.</span><span class="se">\n\n</span><span class="s2">"</span>
+        <span class="s2">"- Gross Change:</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="s2">"  Contains the values for the Gross Loss and Gain chart, showing all components of gross change (including Space Difference) for each time interval, the sum, and the extent.</span><span class="se">\n\n</span><span class="s2">"</span>
+        <span class="s2">"- Net Change:</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="s2">"  Contains the values for the Net Change chart, showing the quantity-based components of change (without Space Difference) for each time interval, the sum, and the extent."</span>
+    <span class="p">)</span>
+    <span class="n">df_readme</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'File Description'</span><span class="p">:</span> <span class="p">[</span><span class="n">readme_text</span><span class="p">]})</span>
+    <span class="n">df_readme</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'ReadMe'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1"># --- 2. PRESENCE AGREEMENT SHEET ---</span>
+    <span class="n">presence_data_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tp</span> <span class="ow">in</span> <span class="n">time_points</span><span class="p">:</span>
+        <span class="n">row_data</span> <span class="o">=</span> <span class="n">results_by_time</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tp</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">row_data</span><span class="p">[</span><span class="s1">'Time Point'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tp</span>
+        <span class="n">presence_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_data</span><span class="p">)</span>
+    <span class="n">sum_row_presence</span> <span class="o">=</span> <span class="n">sum_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">sum_row_presence</span><span class="p">[</span><span class="s1">'Time Point'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Sum'</span>
+    <span class="n">presence_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_row_presence</span><span class="p">)</span>
+    
+    <span class="n">df_presence</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">presence_data_list</span><span class="p">)</span>
+    <span class="n">presence_cols_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Time Point'</span><span class="p">,</span> <span class="s1">'Hit'</span><span class="p">,</span> <span class="s1">'Space Difference'</span><span class="p">,</span> <span class="s1">'Time Difference'</span><span class="p">,</span> <span class="s1">'Miss'</span><span class="p">,</span> <span class="s1">'False Alarm'</span><span class="p">,</span> <span class="s1">'Total X'</span><span class="p">,</span> <span class="s1">'Total Y'</span><span class="p">]</span>
+    <span class="n">df_presence</span> <span class="o">=</span> <span class="n">df_presence</span><span class="p">[</span><span class="n">presence_cols_order</span><span class="p">]</span>
+    <span class="n">df_presence</span> <span class="o">=</span> <span class="n">df_presence</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df_presence</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Presence Agreement'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># --- 3. GROSS CHANGE SHEET ---</span>
+    <span class="n">gross_change_data_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">:</span>
+        <span class="n">row_data</span> <span class="o">=</span> <span class="n">change_results_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">row_data</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="n">interval</span>
+        <span class="n">gross_change_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_data</span><span class="p">)</span>
+    <span class="n">sum_row_gross</span> <span class="o">=</span> <span class="n">sum_change_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">sum_row_gross</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Sum'</span>
+    <span class="n">gross_change_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_row_gross</span><span class="p">)</span>
+    <span class="n">extent_row_gross</span> <span class="o">=</span> <span class="n">extent_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">extent_row_gross</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Extent'</span>
+    <span class="n">gross_change_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extent_row_gross</span><span class="p">)</span>
+
+    <span class="n">df_gross</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">gross_change_data_list</span><span class="p">)</span>
+    <span class="n">gross_cols_order</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'Interval'</span><span class="p">,</span> <span class="s1">'Gain Hit'</span><span class="p">,</span> <span class="s1">'Gain Space Difference'</span><span class="p">,</span> <span class="s1">'Gain Time Difference'</span><span class="p">,</span> <span class="s1">'Gain Miss'</span><span class="p">,</span> <span class="s1">'Gain False Alarm'</span><span class="p">,</span>
+        <span class="s1">'Loss Hit'</span><span class="p">,</span> <span class="s1">'Loss Space Difference'</span><span class="p">,</span> <span class="s1">'Loss Time Difference'</span><span class="p">,</span> <span class="s1">'Loss Miss'</span><span class="p">,</span> <span class="s1">'Loss False Alarm'</span>
+    <span class="p">]</span>
+    <span class="n">df_gross</span> <span class="o">=</span> <span class="n">df_gross</span><span class="p">[</span><span class="n">gross_cols_order</span><span class="p">]</span>
+    <span class="n">df_gross</span> <span class="o">=</span> <span class="n">df_gross</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># &lt;-- CORREÇÃO AQUI</span>
+    <span class="n">df_gross</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Gross Change'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1"># --- 4. NET CHANGE SHEET ---</span>
+    <span class="n">net_change_data_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">time_intervals</span><span class="p">:</span>
+        <span class="n">row_data</span> <span class="o">=</span> <span class="n">net_change_by_interval</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">row_data</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="n">interval</span>
+        <span class="n">net_change_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_data</span><span class="p">)</span>
+    <span class="n">sum_row_net</span> <span class="o">=</span> <span class="n">sum_net_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">sum_row_net</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Sum'</span>
+    <span class="n">net_change_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_row_net</span><span class="p">)</span>
+    <span class="n">extent_row_net</span> <span class="o">=</span> <span class="n">net_extent_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">extent_row_net</span><span class="p">[</span><span class="s1">'Interval'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Extent'</span>
+    <span class="n">net_change_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extent_row_net</span><span class="p">)</span>
+    
+    <span class="n">df_net</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">net_change_data_list</span><span class="p">)</span>
+    <span class="n">net_cols_order</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'Interval'</span><span class="p">,</span> <span class="s1">'Gain Hit'</span><span class="p">,</span> <span class="s1">'Gain Time Difference'</span><span class="p">,</span> <span class="s1">'Gain Miss'</span><span class="p">,</span> <span class="s1">'Gain False Alarm'</span><span class="p">,</span>
+        <span class="s1">'Loss Hit'</span><span class="p">,</span> <span class="s1">'Loss Time Difference'</span><span class="p">,</span> <span class="s1">'Loss Miss'</span><span class="p">,</span> <span class="s1">'Loss False Alarm'</span>
+    <span class="p">]</span>
+    <span class="n">df_net</span> <span class="o">=</span> <span class="n">df_net</span><span class="p">[</span><span class="n">net_cols_order</span><span class="p">]</span>
+    <span class="n">df_net</span> <span class="o">=</span> <span class="n">df_net</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># &lt;-- CORREÇÃO AQUI</span>
+    <span class="n">df_net</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Net Change'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># --- Auto-adjust column widths ---</span>
+    <span class="n">workbook</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">book</span>
+    <span class="k">for</span> <span class="n">sheet_name</span> <span class="ow">in</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">:</span>
+        <span class="n">worksheet</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="n">sheet_name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">sheet_name</span> <span class="o">==</span> <span class="s1">'ReadMe'</span><span class="p">:</span>
+            <span class="n">worksheet</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">'A:A'</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span> <span class="c1"># Set a fixed width for the description</span>
+            <span class="c1"># Enable text wrapping</span>
+            <span class="n">cell_format</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">add_format</span><span class="p">({</span><span class="s1">'valign'</span><span class="p">:</span> <span class="s1">'top'</span><span class="p">,</span> <span class="s1">'text_wrap'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+            <span class="n">worksheet</span><span class="o">.</span><span class="n">set_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">cell_format</span><span class="p">)</span> <span class="c1"># Set row height and format</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_net</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">'Net'</span> <span class="ow">in</span> <span class="n">sheet_name</span> <span class="k">else</span> <span class="n">df_gross</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">'Gross'</span> <span class="ow">in</span> <span class="n">sheet_name</span> <span class="k">else</span> <span class="n">df_presence</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+                <span class="n">series</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_net</span> <span class="k">if</span> <span class="s1">'Net'</span> <span class="ow">in</span> <span class="n">sheet_name</span> <span class="k">else</span> <span class="n">df_gross</span> <span class="k">if</span> <span class="s1">'Gross'</span> <span class="ow">in</span> <span class="n">sheet_name</span> <span class="k">else</span> <span class="n">df_presence</span><span class="p">)[</span><span class="n">col</span><span class="p">]</span>
+                <span class="n">max_len</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">name</span><span class="p">))))</span> <span class="o">+</span> <span class="mi">2</span>
+                <span class="n">worksheet</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">max_len</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">✅ All results successfully exported to: </span><span class="si">{</span><span class="n">excel_final_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8637,7 +8976,7 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
 <span class="c1"># 1. Initialize accumulator map</span>
 <span class="c1"># =============================================================================</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Starting calculation for Presence Agreement Map..."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Starting calculation for Presence Agreement raster map..."</span><span class="p">)</span>
 
 <span class="c1"># Use the first time point to get the spatial profile (dimensions, CRS, etc.)</span>
 <span class="c1"># This ensures the output map has the same spatial properties as the inputs.</span>
@@ -8904,7 +9243,7 @@ a.anchor-link {
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
 
-<span class="n">output_plot_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'plot_presence_agreement_</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">.png'</span>
+<span class="n">output_plot_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'presence_agreement_</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">_map.png'</span>
 <span class="n">final_plot_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">output_plot_filename</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
@@ -9688,7 +10027,7 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
 <span class="c1"># 1. Prepare data and metadata for plotting</span>
 <span class="c1"># =============================================================================</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Generating the Change Differencemap visualization..."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Generating the Change Difference map visualization..."</span><span class="p">)</span>
 
 <span class="c1"># Define the path to the raster file created in the previous cell</span>
 <span class="n">input_map_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'change_difference_</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">.tif'</span>
@@ -9830,7 +10169,7 @@ a.anchor-link {
 <span class="c1"># --- Final styling and saving ---</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s1">'Change Difference Map (En) - </span><span class="si">{</span><span class="n">class_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s1">'Change Difference Map - </span><span class="si">{</span><span class="n">class_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
     <span class="n">pad</span><span class="o">=</span><span class="mi">20</span>
 <span class="p">)</span>
