@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20250820</CreaDate><CreaTime>16455200</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Spatial Analyst Tools.tbx\SetNull" Date="20250820" Time="164552">SetNull PIE2010_v5.tif PIE2010_v5.tif C:\Users\AntFonseca\github\compare-time-series\input\object2\PIE2010.tif "VALUE = -1"</Process></lineage></DataProperties></Esri></metadata>
