@@ -33,7 +33,7 @@ During the preparation of this work, the author used AI tools in order to genera
 
 If you use this code or methodology in your research, please cite:
 
-> Pontius Jr, R. G., & Fonseca, A. V. (2024). Foundational concepts and equations to compare two time series of maps. 
+> Pontius Jr, R. G., & Fonseca, A. V. (2026). Foundational concepts and equations to compare two time series of maps. 
 
 **BibTeX:**
 ```bibtex
@@ -42,7 +42,7 @@ If you use this code or methodology in your research, please cite:
   author={Pontius Jr, Robert Gilmore and Fonseca, Ant{\^o}nio V.},
   year={2026}
 }
-
+```
 ## Quickstart: Run Locally on Your Computer
 
 1. **Clone the repository**
