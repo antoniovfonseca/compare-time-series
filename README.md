@@ -42,3 +42,33 @@ If you use this code or methodology in your research, please cite:
   author={Pontius Jr, Robert Gilmore and Fonseca, Ant{\^o}nio V.},
   year={2026}
 }
+
+## Quickstart: Run Locally on Your Computer
+
+1. **Clone the repository**
+    ```bash
+    git clone [https://github.com/antoniovfonseca/compare-time-series.git](https://github.com/antoniovfonseca/compare-time-series.git)
+    cd compare-time-series
+    ```
+
+2. **Create and activate a virtual environment**
+    ```bash
+    conda env create -f environment.yml
+    # or, with mamba:
+    # mamba env create -f environment.yml
+    ```
+
+3. **Activate environment**
+    ```bash
+    conda activate cts_env
+    ```
+
+4. **Install JupyterLab (if you do not have it yet)**
+    ```bash
+    pip install jupyterlab
+    ```
+
+5. **Launch JupyterLab**
+    ```bash
+    jupyter lab
+    ```
