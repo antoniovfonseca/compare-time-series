@@ -9,12 +9,12 @@ This repository contains the implementation associated with the research framewo
 
 **Purpose:**
 
-This notebook implements the framework from the article “Foundational concepts and equations to compare two time series of maps” to quantify and visualize agreement, disagreement, and change between two time sereis maps. It defines modular Python functions to compute presence‐agreement components, gains and losses, and full‐extent change metrics. The script produces visualizations and exportable results for reproducible analysis.
+This notebook implements the framework from the article “Foundational concepts and equations to compare two time series of maps” to quantify and visualize agreement, disagreement, and change between two time series maps. It defines modular Python functions to compute presence‐agreement components, gains and losses, and full‐extent change metrics. The script produces visualizations and exportable results for reproducible analysis.
 
 **Notebook Outline:**
 1. **Environmental Setup:** Load required Python libraries and define parameters for input paths, time points, and NoData values.
-2. **Definition of Calculation Functions:** Establish modular functions to calculate presence agreement and disagreement metrics for single time points, gross change metrics for time intervals, and net change components.
-3. **Execute the functions:** Run a central execution pipeline to process data arrays and store the results for presence and change assessments in csv file.
+2. **Definition of Calculation Functions:** Establish modular functions to calculate presence agreement and disagreement metrics for single time points, gross and net change metrics for time intervals.
+3. **Execute the functions:** Run a central execution pipeline to process data arrays and store the results for presence and change assessments in a CSV files.
 4. **Plot the graphics:** Generate and export bar charts to visualize presence components and temporal differences across the time series.
 5. **Plot the maps:** Generate maps to visualize presence and change components across the time series.
 
