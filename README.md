@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/antoniovfonseca/compare-time-series/main/figures/cover.png" width="1000" height="200">
+<img src="https://raw.githubusercontent.com/antoniovfonseca/compare-time-series/main/figures/cover.png" width="1000" height="300">
 
 # **Comparison of Two Time Series of Maps**
 [![AI Assisted](https://img.shields.io/badge/AI%20Assisted-Code%20Generation-success)](#AIdisclosure)
