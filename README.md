@@ -3,7 +3,7 @@
 # **Comparison of Two Time Series of Maps**
 [![AI Assisted](https://img.shields.io/badge/AI%20Assisted-Code%20Generation-success)](#AIdisclosure)
 ---
-This repository contains the implementation associated with the research framework for comparing temporal map series. 
+This repository contains the implementation associated with the research framework for comparing spatial and temporal map series. 
 
 **Authors:** [Antonio Fonseca](https://orcid.org/my-orcid?orcid=0000-0001-6309-6204), [Robert Gilmore Pontius Jr](https://wordpress.clarku.edu/rpontius/), [Aiyin Zhang](https://orcid.org/0000-0001-6236-7105)
 
