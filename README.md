@@ -11,7 +11,7 @@ This repository contains the implementation associated with the research framewo
 
 **Purpose:**
 
-This notebook implements the framework from the article “Foundational concepts and equations to compare two time series of maps” to quantify and visualize agreement, disagreement, and change between two time series maps. It defines modular Python functions to compute presence‐agreement components, gains and losses, and full‐extent change metrics. The script produces visualizations and exportable results for reproducible analysis.
+This notebook implements the framework from the article “Foundational concepts and equations to compare two time series of maps” to quantify and visualize agreement, disagreement, and change between two time series maps. The framework defines modular Python functions to compute presence and change components, and full‐extent change metrics. The script produces visualizations and exportable results for reproducible analysis.
 
 **Notebook Outline:**
 1. **Environmental Setup:** Load required Python libraries and define parameters for input paths, time points, and NoData values.
