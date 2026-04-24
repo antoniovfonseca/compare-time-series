@@ -23,8 +23,9 @@ The United States National Aeronautical and Space Administration supported this 
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/antoniovfonseca/summarize-change-components/refs/heads/main/logos/nasa_lulc_dark.png" height="80" alt="NASA LULC" />&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/antoniovfonseca/compare-time-series/blob/main/figures/LTER-Network-logo
-
+  <img src="https://github.com/antoniovfonseca/compare-time-series/blob/main/figures/LTER-Network-logo-200x200px.jpg?raw=1" height="80" alt="LTER Network logo" />&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/antoniovfonseca/summarize-change-components/refs/heads/main/logos/clark_logo_horizontal.png" height="80" alt="Clark logo" />
+</p>
 
 <a id="AIdisclosure"></a>
 ## AI Use Disclosure
