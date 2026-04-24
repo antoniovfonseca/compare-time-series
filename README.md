@@ -3,7 +3,7 @@
 ---
 This repository contains the implementation associated with the research framework for comparing temporal map series. 
 
-**Authors:** [Antonio Fonseca](https://orcid.org/my-orcid?orcid=0000-0001-6309-6204), [Robert Gilmore Pontius Jr](https://wordpress.clarku.edu/rpontius/), [Aiyin Zhang]([https://orcid.org/my-orcid?orcid=0000-0001-6309-6204](https://orcid.org/0000-0001-6236-7105)
+**Authors:** [Antonio Fonseca](https://orcid.org/my-orcid?orcid=0000-0001-6309-6204), [Robert Gilmore Pontius Jr](https://wordpress.clarku.edu/rpontius/), [Aiyin Zhang](https://orcid.org/0000-0001-6236-7105)
 
 **Institution:** [Clark University](https://www.clarku.edu/)
 
