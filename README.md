@@ -3,7 +3,7 @@
 ---
 This repository contains the implementation associated with the research framework for comparing temporal map series. 
 
-**Authors:** [Antonio Fonseca](https://orcid.org/my-orcid?orcid=0000-0001-6309-6204), [Robert Gilmore Pontius Jr](https://wordpress.clarku.edu/rpontius/)
+**Authors:** [Antonio Fonseca](https://orcid.org/my-orcid?orcid=0000-0001-6309-6204), [Robert Gilmore Pontius Jr](https://wordpress.clarku.edu/rpontius/), [Aiyin ZHANG]([https://orcid.org/my-orcid?orcid=0000-0001-6309-6204](https://orcid.org/0000-0001-6236-7105))
 
 **Institution:** [Clark University](https://www.clarku.edu/)
 
@@ -21,6 +21,8 @@ This notebook implements the framework from the article “Foundational concepts
 **Acknowledgments:**
 
 The United States National Aeronautical and Space Administration supported this work through the Land-Cover and Land-Use Change Mission Directorate via the grant 80NSSC23K0508 entitled ["Irrigation as climate-change adaptation in the Cerrado biome of Brazil evaluated with new quantitative methods, socio-economic analysis, and scenario models."](https://lcluc.umd.edu/projects/irrigation-climate-change-adaptation-cerrado-biome-brazil-evaluated-new-quantitative)
+
+The United States National Science Foundation supported this work via the Long Term Ecological Research network via grant OCE-2224608 for [Plum Island Ecosystems.](https://pie-lter.mbl.edu/)
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/antoniovfonseca/summarize-change-components/refs/heads/main/logos/nasa_lulc_dark.png" height="80" alt="NASA LULC" />&nbsp;&nbsp;&nbsp;
