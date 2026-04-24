@@ -21,19 +21,10 @@ This notebook implements the framework from the article “Foundational concepts
 
 The United States National Aeronautical and Space Administration supported this work through the Land-Cover and Land-Use Change Mission Directorate via the grant 80NSSC23K0508 entitled ["Irrigation as climate-change adaptation in the Cerrado biome of Brazil evaluated with new quantitative methods, socio-economic analysis, and scenario models."](https://lcluc.umd.edu/projects/irrigation-climate-change-adaptation-cerrado-biome-brazil-evaluated-new-quantitative)
 
-<table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td style="border:0; padding:0 12px 0 0;">
-      <img src="https://raw.githubusercontent.com/antoniovfonseca/summarize-change-components/refs/heads/main/logos/nasa_lulc_dark.png" height="80" alt="NASA LULC" />
-    </td>
-    <td style="border:0; padding:0 12px 0 0;">
-      <img src="https://github.com/antoniovfonseca/compare-time-series/blob/main/figures/LTER-Network-logo-200x200px.jpg?raw=1" height="80" alt="LTER Network logo" />
-    </td>
-    <td style="border:0; padding:0;">
-      <img src="https://raw.githubusercontent.com/antoniovfonseca/summarize-change-components/refs/heads/main/logos/clark_logo_horizontal.png" height="80" alt="Clark logo" />
-    </td>
-  </tr>
-</table>
+<p align="left">
+  <img src="https://raw.githubusercontent.com/antoniovfonseca/summarize-change-components/refs/heads/main/logos/nasa_lulc_dark.png" height="80" alt="NASA LULC" />&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/antoniovfonseca/compare-time-series/blob/main/figures/LTER-Network-logo
+
 
 <a id="AIdisclosure"></a>
 ## AI Use Disclosure
