@@ -39,7 +39,7 @@ During the preparation of this work, the author used AI tools in order to genera
 
 1. **Clone the repository**
     ```bash
-    git clone [https://github.com/antoniovfonseca/compare-time-series.git](https://github.com/antoniovfonseca/compare-time-series.git)
+    git clone https://github.com/antoniovfonseca/compare-time-series.git
     cd compare-time-series
     ```
 
