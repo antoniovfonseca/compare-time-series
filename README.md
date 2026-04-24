@@ -46,8 +46,6 @@ During the preparation of this work, the author used AI tools in order to genera
 2. **Create and activate a virtual environment**
     ```bash
     conda env create -f environment.yml
-    # or, with mamba:
-    # mamba env create -f environment.yml
     ```
 
 3. **Activate environment**
