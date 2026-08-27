@@ -11,20 +11,20 @@ This repository contains the implementation associated with the research framewo
 
 **Purpose:**
 
-This notebook implements the framework from the article “Foundational concepts and equations to compare two time series of maps” to quantify and visualize agreement, disagreement, and change between two time series maps. The framework defines modular Python functions to compute presence and change components, and full‐extent change metrics. The script produces visualizations and exportable results for reproducible analysis.
+This notebook implements the framework from the article “Foundational concepts and equations to compare two time series of maps” to quantify and visualize agreement, disagreement, and change between two time series maps. The framework defines modular Python functions to compute presence and change components and full‐extent change metrics. The script produces visualizations and exportable results for reproducible analysis.
 
 **Notebook Outline:**
 1. **Environmental Setup:** Load required Python libraries and define parameters for input paths, time points, and NoData values.
-2. **Definition of Calculation Functions:** Establish modular functions to calculate presence agreement and disagreement metrics for single time points, gross and net change metrics for time intervals.
-3. **Execute the functions:** Run a central execution pipeline to process data arrays and store the results for presence and change assessments in a CSV files.
+2. **Definition of Calculation Functions:** Establish modular functions to calculate presence agreement and disagreement metrics for single time points and gross and net change metrics for time intervals.
+3. **Execute the functions:** Run a central execution pipeline to process data arrays and store the results for presence and change assessments in CSV files.
 4. **Plot the graphics:** Generate and export bar charts to visualize presence components and temporal differences across the time series.
 5. **Plot the maps:** Generate maps to visualize presence and change components across the time series.
 
 **Acknowledgments:**
 
-The United States National Aeronautical and Space Administration supported this work through the Land-Cover and Land-Use Change Mission Directorate via the grant 80NSSC23K0508 entitled ["Irrigation as climate-change adaptation in the Cerrado biome of Brazil evaluated with new quantitative methods, socio-economic analysis, and scenario models."](https://lcluc.umd.edu/projects/irrigation-climate-change-adaptation-cerrado-biome-brazil-evaluated-new-quantitative)
+The United States National Aeronautics and Space Administration supported this work through the Land-Cover and Land-Use Change Mission Directorate via the grant 80NSSC23K0508 entitled ["Irrigation as climate-change adaptation in the Cerrado biome of Brazil evaluated with new quantitative methods, socio-economic analysis, and scenario models."](https://lcluc.umd.edu/projects/irrigation-climate-change-adaptation-cerrado-biome-brazil-evaluated-new-quantitative)
 
-The United States National Science Foundation supported this work via the Long Term Ecological Research network via grant OCE-2224608 for [Plum Island Ecosystems.](https://pie-lter.mbl.edu/)
+The United States National Science Foundation supported this work via the Long Term Ecological Research network via grant OCE-2224608 for [Plum Island Ecosystems](https://pie-lter.mbl.edu/)
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/antoniovfonseca/summarize-change-components/refs/heads/main/logos/nasa_lulc_dark.png" height="80" alt="NASA LULC" />&nbsp;&nbsp;&nbsp;
